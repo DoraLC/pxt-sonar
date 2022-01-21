@@ -26,8 +26,9 @@ namespace sonar {
         pins.digitalWritePin(trig, 0);
         control.waitMicros(2);
         pins.digitalWritePin(trig, 1);
-        control.waitMicros(100);
+        control.waitMicros(10);
         pins.digitalWritePin(trig, 0);
+        control.waitMicros(100);
 
         // read pulse
         const d = pins.pulseIn(echo, PulseValue.High, maxCmDistance * 58);
