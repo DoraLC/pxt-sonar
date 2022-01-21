@@ -32,7 +32,7 @@ namespace sonar {
         // read pulse
         const d = pins.pulseIn(echo, PulseValue.High, maxCmDistance * 58);
 
-        basic.pause(100);
+        basic.pause(10);
 
         switch (unit) {
             case PingUnit.Centimeters: return Math.idiv(d, 58);
