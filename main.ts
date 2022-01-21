@@ -28,10 +28,11 @@ namespace sonar {
         pins.digitalWritePin(trig, 1);
         control.waitMicros(10);
         pins.digitalWritePin(trig, 0);
-        control.waitMicros(100);
 
         // read pulse
         const d = pins.pulseIn(echo, PulseValue.High, maxCmDistance * 58);
+
+        basic.pause(100);
 
         switch (unit) {
             case PingUnit.Centimeters: return Math.idiv(d, 58);
